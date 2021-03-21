@@ -1,5 +1,6 @@
 /node_modules/
-/public/build/
+/dist/public/build/
+/dist/server.js
 
 .DS_Store
 package-lock.json

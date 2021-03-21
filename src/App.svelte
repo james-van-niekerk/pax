@@ -3,8 +3,9 @@
 
   let canvas;
   let ctx;
-  let width = 1007;
-  let height = 1140;
+  let height = 400;
+  let width = 600;
+
   const render = async () => {
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -62,13 +63,13 @@
     return () => cancelAnimationFrame(raf);
   });
 
-  //   onMount(async () => {
-  // 	  await render();
-  //   });
+  onMount(async () => {
+    await render();
+  });
 
-  //   beforeUpdate(async () => {
-  // 	  await render();
-  //   })
+  beforeUpdate(async () => {
+    await render();
+  });
 </script>
 
 <div class="container" bind:clientWidth={width} bind:clientHeight={height}>
@@ -76,10 +77,10 @@
 </div>
 
 <style>
-	* {
-  padding: 0;
-  margin: 0;
-}
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
   .container {
     width: 100%;
