@@ -5,13 +5,16 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-import { sayHi } from './libs/sayHi.js'
+// import { sayHi } from './libs/sayHi.js'
+import { create_UUID } from './libs/UUIDv4.js'
 
 const HOST = 'localhost';
 const PORT = 5000;
 
 // import Route from './Route.js';
 // import Router from './Router.js';
+
+let session_map = {};
 
 function handleRequest(request, response) {
     console.log('request ', request.url);
@@ -22,6 +25,13 @@ function handleRequest(request, response) {
     }
 
     var extname = String(path.extname(filePath)).toLowerCase();
+
+    console.log(`Request: ${filePath}`)
+    console.log(`Ext name: ${extname}`)
+    
+    // let a_uuid = create_UUID();
+    // console.log(`UUIDv4 = ${a_uuid}`);
+
     var mimeTypes = {
         '.html': 'text/html',
         '.js': 'text/javascript',
@@ -64,8 +74,7 @@ function handleRequest(request, response) {
 }
 
 function Helloiew() {
-    console.log(`[HelloView] Listening on http://${HOST}:${PORT}/`)
-    sayHi('Anonymous')
+    console.log(`[HelloView] Listening on http://${HOST}:${PORT}/`);
 }
 
 var main_server = http.createServer(handleRequest);
