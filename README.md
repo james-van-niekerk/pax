@@ -2,6 +2,10 @@
 
 ---
 
+# server component
+
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework
+
 # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
